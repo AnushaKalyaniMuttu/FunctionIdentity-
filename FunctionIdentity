@@ -1,0 +1,16 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("apple", "banana", "orange");
+
+        // Using identity function in the map
+        Map<String, String> wordMap = words.stream()
+                .collect(Collectors.toMap(s -> s, java.util.function.Function.identity()));
+
+        System.out.println(wordMap);
+    }
+}
